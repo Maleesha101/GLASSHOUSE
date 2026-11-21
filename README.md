@@ -27,6 +27,10 @@ CORS is the central vulnerability. It does not bypass server-side authorization;
 - Local orchestration: Docker Compose
 - Tests: Vitest + Supertest + Playwright
 
+## Local development
+
+See [docs/development.md](docs/development.md) for Docker Compose setup, local hostname configuration, health checks, and reset instructions.
+
 ## Repository status
 
 The repository is being built incrementally. See [docs/roadmap.md](docs/roadmap.md) for milestones and [docs/architecture.md](docs/architecture.md) for the intended service boundaries.
