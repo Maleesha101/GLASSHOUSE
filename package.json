@@ -1,0 +1,11 @@
+{
+  "name": "glasshouse",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": ["apps/api", "apps/web"],
+  "scripts": {
+    "dev:api": "npm run dev --workspace @glasshouse/api",
+    "dev:web": "npm run dev --workspace @glasshouse/web",
+    "test": "npm run test --workspace @glasshouse/api"
+  }
+}
