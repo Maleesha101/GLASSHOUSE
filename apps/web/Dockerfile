@@ -8,9 +8,11 @@ COPY apps/api/package.json ./apps/api/package.json
 COPY apps/web/package.json ./apps/web/package.json
 RUN npm install
 
-COPY apps/web ./apps/web
+COPY --chown=node:node apps/web ./apps/web
+# Vite writes its config bundle and cache while running as the non-root user.
+RUN chown -R node:node /workspace/node_modules
 WORKDIR /workspace/apps/web
 
 USER node
 EXPOSE 5173
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]
+CMD ["npm", "run", "dev", "--", "--port", "5173"]
